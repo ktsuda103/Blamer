@@ -54,7 +54,7 @@
                             @endif
                         @else
                             <li class="nav-link nav-item">
-                                <a class="nav-link" href=""><i class="fas fa-plus mr-2"></i>投稿する</a>
+                                <a class="nav-link" href="{{ route('create') }}"><i class="fas fa-plus mr-2"></i>投稿する</a>
                             </li>
                             <li id="navbarDropdown" class="nav-link" class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
