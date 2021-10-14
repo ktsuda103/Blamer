@@ -7,16 +7,7 @@ use App\Models\Post;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     /**
      * Show the application dashboard.
      *
@@ -25,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $post = new Post();
-        $post_data = $post->get_all_item();
-        return view('home',compact('post_data'));
+        $posts = $post->get_all_item();
+        return view('home',compact('posts'));
     }
 }

@@ -41,7 +41,7 @@ class Post extends Model
      */
     public function get_all_item()
     {
-        $post_data = $this->get_item()->paginate(12);
-        return $item;
+        $posts = $this->get_item()->paginate(12);
+        return $posts;
     }
 }

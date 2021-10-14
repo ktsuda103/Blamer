@@ -15,12 +15,10 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('/home');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/post/create', [PostController::class, 'create'])->name('post/create');
 Route::post('/post/store', [PostController::class, 'store'])->name('post/store');
