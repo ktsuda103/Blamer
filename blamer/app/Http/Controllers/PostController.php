@@ -30,7 +30,7 @@ class PostController extends Controller
         $data = $request->input();
         $file = $request->file('image')->getClientOriginalName();
         $path = $request->file('image')->storeAs('public/images', $file);
-        $post->insertItem($user_id,$data,$path);
+        $post->insert_item($user_id,$data,$path);
         return redirect()->route('post/create')->with('success', '投稿完了しました。');
     }
 }
