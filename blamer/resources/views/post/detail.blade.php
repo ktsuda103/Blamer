@@ -39,6 +39,9 @@
                     </div>
                 </div>
                 <div class="card-footer">
+                    @guest
+                        <p>コメントするにはログインが必要です。</p>
+                    @else
                     <form method="post" action="">
                         @csrf
                         <div class="form-group">
@@ -47,6 +50,7 @@
                             <input type="submit" value="送信" class="btn btn-primary">
                         </div>
                     </form>
+                    @endguest
                 </div>
             </div>
         </div>

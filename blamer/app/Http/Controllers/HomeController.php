@@ -19,4 +19,11 @@ class HomeController extends Controller
         $posts = $post->get_all_item();
         return view('home',compact('posts'));
     }
+
+    public function detail($id)
+    {
+        $post = new Post();
+        $post = $post->get_one_item($id);
+        return view('post/detail',compact('post'));
+    }
 }
