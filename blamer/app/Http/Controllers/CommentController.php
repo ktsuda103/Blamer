@@ -6,5 +6,13 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    //
+    /**
+     * コメント
+     * 
+     * 
+     */
+    public function store()
+    {
+        
+    }
 }

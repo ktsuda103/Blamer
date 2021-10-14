@@ -42,8 +42,9 @@
                     @guest
                         <p>コメントするにはログインが必要です。</p>
                     @else
-                    <form method="post" action="">
+                    <form method="post" action="{{ route('comment/store') }}">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $post->id }}">
                         <div class="form-group">
                             <label for="comment">コメント</label>
                             <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
