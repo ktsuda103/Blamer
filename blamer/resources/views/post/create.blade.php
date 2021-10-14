@@ -9,7 +9,21 @@
                     投稿画面
                 </div>
                 <div class="card-body">
-                    <form method="post" action="" enctype="multipart/form-data">
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                    <form method="post" action="{{ route('post/store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="title" class="col-md-3 col-form-label text-md-right">タイトル</label>
