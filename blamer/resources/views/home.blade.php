@@ -16,48 +16,22 @@
                 </div>
             </div>
         </div>
+        @foreach($posts as $post)
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">{{ __('タイトル') }}</div>
+                <div class="card-header">{{ $post->title }}</div>
                 <div class="text-center">
                     <div class="card-body">
-                        <img src="https://picsum.photos/200/300" alt="" class="img-fluid">
+                        <img src="{{ Storage::url($post->image) }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p>投稿者：</p>
-                    <p>投稿日時：</p>
+                    <p>投稿者：{{ $post->name }}</p>
+                    <p>投稿日時：{{ $post->post_create }}</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">{{ __('タイトル') }}</div>
-                <div class="text-center">
-                    <div class="card-body">
-                        <img src="https://picsum.photos/200/300" alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <p>投稿者：</p>
-                    <p>投稿日時：</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">{{ __('タイトル') }}</div>
-                <div class="text-center">
-                    <div class="card-body">
-                        <img src="https://picsum.photos/200/300" alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <p>投稿者：</p>
-                    <p>投稿日時：</p>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection
