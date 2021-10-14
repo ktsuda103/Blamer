@@ -22,4 +22,4 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/post/create', [PostController::class, 'create'])->name('post/create');
 Route::post('/post/store', [PostController::class, 'store'])->name('post/store');
-Route::post('/post/detail/{id}', [PostController::class, 'detail'])->name('post/detail');
+Route::get('/post/detail/{id}', [PostController::class, 'detail'])->name('post/detail');

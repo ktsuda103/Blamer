@@ -47,4 +47,10 @@ class Post extends Model
         $posts = $this->get_item()->paginate(12);
         return $posts;
     }
+
+    public function get_one_item($id)
+    {
+        $post = $this->get_item()->where('posts.id',$id)->first();
+        return $post;
+    }
 }

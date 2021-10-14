@@ -33,4 +33,11 @@ class PostController extends Controller
         $post->insert_item($user_id,$data,$path);
         return redirect()->route('post/create')->with('success', '投稿完了しました。');
     }
+
+    public function detail($id)
+    {
+        $post = new Post();
+        $post = $post->get_one_item($id);
+        return view('post/detail',compact('post'));
+    }
 }
