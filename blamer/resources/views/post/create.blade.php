@@ -9,6 +9,11 @@
                     投稿画面
                 </div>
                 <div class="card-body">
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>
