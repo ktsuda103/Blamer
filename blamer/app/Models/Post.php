@@ -31,7 +31,10 @@ class Post extends Model
      */
     private function get_item()
     {
-        return Post::where('status',0)->orderBy('created_at','DESC');
+        return Post::join('users','posts.user_id','=','users.id')
+        ->select('title','image','comment','status','posts.created_at as post_create','name','email')
+        ->where('posts.status',0)
+        ->orderBy('posts.created_at','DESC');
     }
 
     /**

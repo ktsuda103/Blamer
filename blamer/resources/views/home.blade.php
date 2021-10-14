@@ -26,8 +26,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p>投稿者：</p>
-                    <p>投稿日時：{{ $post->created_at }}</p>
+                    <p>投稿者：{{ $post->name }}</p>
+                    <p>投稿日時：{{ $post->post_create }}</p>
                 </div>
             </div>
         </div>
