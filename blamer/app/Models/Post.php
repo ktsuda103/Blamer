@@ -32,7 +32,7 @@ class Post extends Model
     private function get_item()
     {
         return Post::join('users','posts.user_id','=','users.id')
-        ->select('title','image','comment','status','posts.created_at as post_create','name','email')
+        ->select('posts.id','title','image','comment','status','posts.created_at as post_create','name','email')
         ->where('posts.status',0)
         ->orderBy('posts.created_at','DESC');
     }
@@ -46,5 +46,11 @@ class Post extends Model
     {
         $posts = $this->get_item()->paginate(12);
         return $posts;
+    }
+
+    public function get_one_item($id)
+    {
+        $post = $this->get_item()->where('posts.id',$id)->first();
+        return $post;
     }
 }
