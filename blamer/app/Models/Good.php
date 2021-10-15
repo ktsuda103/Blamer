@@ -29,4 +29,9 @@ class Good extends Model
         ->first();
         return $good;
     }
+
+    public function delete_good($good_id)
+    {
+        Good::where('id',$good_id)->delete();
+    }
 }
