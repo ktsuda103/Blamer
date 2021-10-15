@@ -31,17 +31,24 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            投稿者：
+                    @if($comments->isEmpty())
+                    <p>コメントはまだありません</p>
+                    @else
+                        @foreach($comments as $comment)    
+                        <div class="row">
+                            <div class="col-md-4">
+                                投稿者：{{ $comment->name }}
+                            </div>
+                            <div class="offset-md-4 col-md-4">
+                                {{ $comment->comment_create }}
+                            </div>
+                            <div class="col-12 comment">
+                                {{ $comment->comment }}
+                            </div>
                         </div>
-                        <div class="offset-md-4 col-md-4">
-                            投稿日時：
-                        </div>
-                        <div class="col-12">
-                            コメント
-                        </div>
-                    </div>
+                        <hr>
+                        @endforeach
+                    @endif
                 </div>
                 <div class="card-footer">
                     @guest
