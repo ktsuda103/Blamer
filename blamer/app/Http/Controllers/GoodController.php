@@ -13,7 +13,11 @@ class GoodController extends Controller
         $this->middleware('auth');
     }
 
-
+    /**
+     * いいね登録
+     * $param $request
+     * return redirect
+     */
     public function store(Request $request)
     {
         $post_id = $request->input('post_id');
@@ -23,6 +27,11 @@ class GoodController extends Controller
         return redirect()->route('post/detail',['id'=>$post_id])->with('success','いいねしました。');
     }
 
+    /**
+     * いいねを解除
+     * $param $request
+     * return redirect
+     */
     public function delete(Request $request)
     {
         $post_id = $request->input('post_id');
