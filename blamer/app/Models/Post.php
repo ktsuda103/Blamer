@@ -48,6 +48,11 @@ class Post extends Model
         return $posts;
     }
 
+    /**
+     * 特定の投稿データを取得
+     * $param $id
+     * return $post
+     */
     public function get_one_item($id)
     {
         $post = $this->get_item()->where('posts.id',$id)->first();

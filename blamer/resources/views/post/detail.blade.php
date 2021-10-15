@@ -4,6 +4,20 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
+        @if(session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <div class="card mb-5">
                 <div class="card-header">
                     {{ $post->title }}
@@ -26,27 +40,37 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            投稿者：
+                    @if($comments->isEmpty())
+                    <p>コメントはまだありません</p>
+                    @else
+                        @foreach($comments as $comment)    
+                        <div class="row">
+                            <div class="col-md-4">
+                                投稿者：{{ $comment->name }}
+                            </div>
+                            <div class="offset-md-4 col-md-4">
+                                {{ $comment->comment_create }}
+                            </div>
+                            <div class="col-12 comment">{{ $comment->comment }}</div>
                         </div>
-                        <div class="offset-md-4 col-md-4">
-                            投稿日時：
-                        </div>
-                        <div class="col-12">
-                            コメント
-                        </div>
-                    </div>
+                        <hr>
+                        @endforeach
+                    @endif
                 </div>
                 <div class="card-footer">
-                    <form method="post" action="">
+                    @guest
+                        <p>コメントするにはログインが必要です。</p>
+                    @else
+                    <form method="post" action="{{ route('comment/store') }}">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $post->id }}">
                         <div class="form-group">
                             <label for="comment">コメント</label>
                             <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
                             <input type="submit" value="送信" class="btn btn-primary">
                         </div>
                     </form>
+                    @endguest
                 </div>
             </div>
         </div>
