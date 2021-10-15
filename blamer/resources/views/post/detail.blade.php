@@ -42,9 +42,7 @@
                             <div class="offset-md-4 col-md-4">
                                 {{ $comment->comment_create }}
                             </div>
-                            <div class="col-12 comment">
-                                {{ $comment->comment }}
-                            </div>
+                            <div class="col-12 comment">{{ $comment->comment }}</div>
                         </div>
                         <hr>
                         @endforeach
