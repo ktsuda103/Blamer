@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Comment;
+
 
 class HomeController extends Controller
 {
@@ -22,8 +24,11 @@ class HomeController extends Controller
 
     public function detail($id)
     {
-        $post = new Post();
-        $post = $post->get_one_item($id);
-        return view('post/detail',compact('post'));
+        $user_id = \Auth::id();
+        $post_model = new Post();
+        $post = $post_model->get_one_item($id);
+        $comment_model = new Comment();
+        $comments = $comment_model->get_comment($id,$user_id);
+        return view('post/detail',compact('post','comments'));
     }
 }

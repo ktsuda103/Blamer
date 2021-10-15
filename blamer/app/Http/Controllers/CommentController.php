@@ -9,9 +9,9 @@ use App\Models\Comment;
 class CommentController extends Controller
 {
     /**
-     * コメント
-     * 
-     * 
+     * コメントする
+     * $param $request
+     * return redirect()
      */
     public function store(CommentFormRequest $request)
     {
