@@ -25,11 +25,19 @@
                         <p>投稿者：{{ $post->name }}</p>
                         <p>投稿日時：{{ $post->post_create }}</p>
                         <p>
-                            <form method="post" action="{{ route('good/store') }}">
-                            @csrf
-                                <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                <input type="submit" value="&#xf004;" class="fas heart">
-                            </form>
+                            @if($good === null)
+                                <form method="post" action="{{ route('good/store') }}">
+                                @csrf
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                    <input type="submit" value="&#xf004;" class="far black-heart">
+                                </form>
+                            @else
+                                <form method="post" action="{{ route('good/store') }}">
+                                @csrf
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                    <input type="submit" value="&#xf004;" class="fas heart">
+                                </form>
+                            @endif
                         </p>
                     </div>
                 </div>

@@ -15,4 +15,18 @@ class Good extends Model
         $this->post_id = $post_id;
         $this->save();
     }
+
+    private function get_my_good()
+    {
+        $user_id = \Auth::id();
+        return Good::where('user_id',$user_id);
+    }
+
+    public function get_the_post_good($post_id)
+    {
+        $good = $this->get_my_good()
+        ->where('post_id',$post_id)
+        ->first();
+        return $good;
+    }
 }
