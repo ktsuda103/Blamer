@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Good;
 
 
 class HomeController extends Controller
@@ -26,9 +27,11 @@ class HomeController extends Controller
     {
         $user_id = \Auth::id();
         $post_model = new Post();
-        $post = $post_model->get_one_item($id);
         $comment_model = new Comment();
+        $good_model = new Good();
+        $post = $post_model->get_one_item($id);
         $comments = $comment_model->get_comment($id,$user_id);
-        return view('post/detail',compact('post','comments'));
+        $good = $good_model->get_the_post_good($id);
+        return view('post/detail',compact('post','comments','good'));
     }
 }

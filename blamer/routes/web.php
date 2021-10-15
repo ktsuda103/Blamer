@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\GoodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,12 @@ use App\Http\Controllers\CommentController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/post/detail/{id}', [HomeController::class, 'detail'])->name('post/detail');
+
 Route::get('/post/create', [PostController::class, 'create'])->name('post/create');
 Route::post('/post/store', [PostController::class, 'store'])->name('post/store');
-Route::get('/post/detail/{id}', [HomeController::class, 'detail'])->name('post/detail');
+
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment/store');
+
+Route::post('/good/store', [GoodController::class, 'store'])->name('good/store');
+Route::post('/good/delete', [GoodController::class, 'delete'])->name('good/delete');
