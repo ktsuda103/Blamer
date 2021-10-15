@@ -24,6 +24,13 @@
                     <div class="text-right">
                         <p>投稿者：{{ $post->name }}</p>
                         <p>投稿日時：{{ $post->post_create }}</p>
+                        <p>
+                            <form action="">
+                            @csrf
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                <input type="submit" value="&#xf004;" class="fas heart">
+                            </form>
+                        </p>
                     </div>
                 </div>
                 <div class="text-center">
