@@ -69,7 +69,14 @@
                             <div class="offset-md-4 col-md-4">
                                 {{ $comment->comment_create }}
                             </div>
-                            <div class="col-12 comment">{{ $comment->comment }}</div>
+                            <div class="col-md-8 comment">{{ $comment->comment }}</div>
+                            <div class="col-md-4">
+                                <form method="post" action="{{ route('best_comment/store') }}" class="form-inline">
+                                    @csrf
+                                    <input type="hidden">
+                                    <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
+                                </form>
+                            </div>
                         </div>
                         <hr>
                         @endforeach
