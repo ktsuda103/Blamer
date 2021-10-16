@@ -22,6 +22,7 @@ use App\Http\Controllers\GoodController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/post/detail/{id}', [HomeController::class, 'detail'])->name('post/detail');
 
 Route::get('/post/create', [PostController::class, 'create'])->name('post/create');
