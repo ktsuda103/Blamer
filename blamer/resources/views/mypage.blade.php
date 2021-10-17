@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
-    aaa
+    <div class="row">
+        <div class="col-md-4">
+            <h1>{{$user['name']}}のページ</h1>
+            
+        </div>
+
+    </div>
 </div>
 @endsection
