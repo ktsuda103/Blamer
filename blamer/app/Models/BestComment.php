@@ -20,4 +20,15 @@ class BestComment extends Model
         $this->post_id = $post_id;
         $this->save();
     }
+
+    /**
+     * ベストコメントデータを取得
+     * $param $post_id
+     * return $best_comment
+     */
+    public function get_best_comment($post_id)
+    {
+        $best_comment = BestComment::where('post_id',$post_id)->first();
+        return $best_comment;
+    }
 }
