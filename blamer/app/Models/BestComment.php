@@ -16,7 +16,6 @@ class BestComment extends Model
      */
     public function insert_best_comment($user_id,$post_id,$comment_id)
     {
-        $this->user_id = $user_id;
         $this->post_id = $post_id;
         $this->comment_id = $comment_id;
         $this->save();
