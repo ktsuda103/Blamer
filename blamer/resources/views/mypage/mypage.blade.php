@@ -4,12 +4,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
+            
             <h1>{{$user['name']}}のページ</h1>
-            <p>現在のポイント数：{{ number_format($point['point']) }}ポイント</p>
-            <p>ベストコメント数：{{ $best_comment }}件</p>
-            <p><a href="{{ route('mypage/good') }}">いいね一覧</a></p>
-            <p><a href="">編集する</a></p>
-            <p><a href="">退会する</a></p>
+            <div class="text-center profile">     
+                <p>{{ $user->email }}</p>
+                <p>現在のポイント数：{{ number_format($point['point']) }}ポイント</p>
+                <p>ベストコメント数：{{ $best_comment }}件</p>
+            </div>
+            <p class="link"><a href="{{ route('mypage/good') }}"><i class="fas fa-heart icon"></i>いいね一覧</a></p>
+            <p class="link"><a href=""><i class="fas fa-user-edit icon"></i>編集する</a></p>
+            <p class="link"><a href=""><i class="fas fa-door-closed icon"></i>退会する</a></p>
         </div>
         <div class="col-md-8">
             <h2>投稿一覧</h2>
