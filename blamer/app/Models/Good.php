@@ -26,9 +26,8 @@ class Good extends Model
      * $param void
      * return クエリ
      */
-    private function get_my_good()
+    private function get_my_good($user_id)
     {
-        $user_id = \Auth::id();
         return Good::where('user_id',$user_id);
     }
 
@@ -37,12 +36,27 @@ class Good extends Model
      * $param $post_id
      * return $good
      */
-    public function get_the_post_good($post_id)
+    public function get_the_post_good($user_id,$post_id)
     {
-        $good = $this->get_my_good()
+        $good = $this->get_my_good($user_id)
         ->where('post_id',$post_id)
         ->first();
         return $good;
+    }
+
+    /**
+     * 自分のいいねを取得
+     * $param $user_id
+     * 
+     */
+    public function get_my_post_good($user_id)
+    {
+        $goods = Good::join('posts','goods.post_id','=','posts.id')
+        ->join('users','posts.user_id','=','users.id')
+        ->select('title','image','posts.created_at as created_at','name','posts.id as post_id')
+        ->where('goods.user_id',$user_id)
+        ->get();
+        return $goods;
     }
 
     /**

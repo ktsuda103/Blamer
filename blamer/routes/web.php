@@ -39,3 +39,4 @@ Route::post('/best_comment/store', [BestCommentController::class, 'store'])->nam
 Route::post('/best_comment/delete', [BestCommentController::class, 'delete'])->name('best_comment/delete');
 
 Route::get('/mypage/index', [MypageController::class, 'index'])->name('mypage/index');
+Route::get('/mypage/good', [MypageController::class, 'good'])->name('mypage/good');

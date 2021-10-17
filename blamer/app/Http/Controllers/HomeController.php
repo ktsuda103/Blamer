@@ -33,7 +33,7 @@ class HomeController extends Controller
         $best_comment_model = new BestComment();
         $post = $post_model->get_one_item($id);
         $comments = $comment_model->get_comment($id);
-        $good = $good_model->get_the_post_good($id);
+        $good = $good_model->get_the_post_good($user_id,$id);
         $best_comment = $best_comment_model->get_best_comment($id);
         return view('post/detail',compact('post','comments','good','best_comment'));
     }
