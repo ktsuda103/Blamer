@@ -18,11 +18,11 @@
         </div>
         @foreach($posts as $post)
         <div class="col-md-4">
-            <div class="card">
+            <div class="card post-card">
                 <div class="card-header"><a href="{{ route('post/detail',['id' => $post->id]) }}">{{ $post->title }}</a></div>
                 <div class="text-center">
                     <div class="card-body">
-                        <img src="{{ Storage::url($post->image) }}" alt="" class="img-fluid">
+                        <img src="{{ Storage::url($post->image) }}" alt="" class="img-fluid image">
                     </div>
                 </div>
                 <div class="card-footer">
