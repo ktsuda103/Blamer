@@ -20,7 +20,7 @@
                         <div class="card-header"><a href="{{ route('post/detail',['id' => $good->post_id]) }}">{{ $good->title }}</a></div>
                         <div class="text-center">
                             <div class="card-body">
-                                <img src="{{ Storage::url($good->image) }}" alt="" class="img-fluid image">
+                                <a href="{{ route('post/detail',['id' => $good->post_id]) }}"><img src="{{ Storage::url($good->image) }}" alt="" class="img-fluid image"></a>
                             </div>
                         </div>
                         <div class="card-footer">
