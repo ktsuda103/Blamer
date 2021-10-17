@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Good;
+use App\Models\BestComment;
 
 
 class HomeController extends Controller
@@ -29,9 +30,11 @@ class HomeController extends Controller
         $post_model = new Post();
         $comment_model = new Comment();
         $good_model = new Good();
+        $best_comment_model = new BestComment();
         $post = $post_model->get_one_item($id);
         $comments = $comment_model->get_comment($id);
         $good = $good_model->get_the_post_good($id);
-        return view('post/detail',compact('post','comments','good'));
+        $best_comment = $best_comment_model->get_best_comment($id);
+        return view('post/detail',compact('post','comments','good','best_comment'));
     }
 }

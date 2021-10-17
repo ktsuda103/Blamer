@@ -1,7 +1,6 @@
 .comment{
     white-space: pre-wrap;
     font-size: 15px;
-    margin-left: 10px;
     margin-top: 10px;
 }
 
@@ -15,4 +14,9 @@
     border: none;
     color: black;
     font-size: 20px;
+}
+
+.star{
+    color: #ff4500;
+    margin-bottom: 10px;
 }

@@ -63,13 +63,39 @@
                     @else
                         @foreach($comments as $comment)    
                         <div class="row">
+                            @if(isset($best_comment))
+                                @if($comment->comment_id === $best_comment->comment_id)
+                                <div class="col-12 star">
+                                    <i class="fas fa-star"></i>ベストコメントに選ばれました！
+                                </div>
+                                @endif
+                            @endif
                             <div class="col-md-4">
                                 投稿者：{{ $comment->name }}
                             </div>
                             <div class="offset-md-4 col-md-4">
                                 {{ $comment->comment_create }}
                             </div>
-                            <div class="col-12 comment">{{ $comment->comment }}</div>
+                            <div class="col-md-8 comment">{{ $comment->comment }}</div>
+                            <div class="col-md-4">
+                                @if($post->user_id === \Auth::id() && $comment->user_id !== \Auth::id())
+                                    @if($best_comment === null)
+                                        <form method="post" action="{{ route('best_comment/store') }}" class="form-inline">
+                                            @csrf
+                                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                            <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">
+                                            <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
+                                        </form>
+                                    @elseif($best_comment->comment_id === $comment->comment_id)
+                                    <form method="post" action="{{ route('best_comment/delete') }}" class="form-inline">
+                                        @csrf
+                                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                        <input type="hidden" name="best_comment_id" value="{{ $best_comment->id }}">
+                                        <button type="submit" class="btn btn-secondary">ベストコメントを解除</button>
+                                    </form>
+                                    @endif
+                                @endif
+                            </div>
                         </div>
                         <hr>
                         @endforeach

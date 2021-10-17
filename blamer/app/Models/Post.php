@@ -32,7 +32,7 @@ class Post extends Model
     private function get_item()
     {
         return Post::join('users','posts.user_id','=','users.id')
-        ->select('posts.id','title','image','comment','status','posts.created_at as post_create','name','email')
+        ->select('posts.id','user_id','title','image','comment','status','posts.created_at as post_create','name','email')
         ->where('posts.status',0)
         ->orderBy('posts.created_at','DESC');
     }
