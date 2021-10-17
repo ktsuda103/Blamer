@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BestComment;
+use Illuminate\Support\Facades\DB;
+use App\Models\Point;
 
 class BestCommentController extends Controller
 {
@@ -13,11 +15,15 @@ class BestCommentController extends Controller
      * 
      */
     public function store(Request $request){
-        $user_id = \Auth::id();
+        $best_comment_model = new BestComment();
+        $point_model = new Point();
+        $user_id = $request->input('user_id');
         $post_id = $request->input('post_id');
         $comment_id = $request->input('comment_id');
-        $best_comment_model = new BestComment();
-        $best_comment_model->insert_best_comment($user_id,$post_id,$comment_id);
+        DB::transaction(function()use($best_comment_model,$point_model,$user_id,$post_id,$comment_id){
+            $best_comment_model->insert_best_comment($post_id,$comment_id);
+            $point_model->insert_point($user_id,100);
+        });
         return redirect()->route('post/detail',['id'=>$post_id])->with('success','ベストコメントに設定しました。');
     }
 
