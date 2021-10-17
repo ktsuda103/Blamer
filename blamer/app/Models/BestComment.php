@@ -34,6 +34,17 @@ class BestComment extends Model
     }
 
     /**
+     * 自分のベストコメントデータを取得
+     * 
+     * 
+     */
+    public function get_my_best_comment($user_id)
+    {
+        $my_best_comment = BestComment::where('user_id',$user_id)->count();
+        return $my_best_comment;
+    }
+
+    /**
      * ベストコメントデータを削除
      * $param $best_comment_id
      * 
