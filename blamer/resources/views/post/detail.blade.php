@@ -71,11 +71,13 @@
                             </div>
                             <div class="col-md-8 comment">{{ $comment->comment }}</div>
                             <div class="col-md-4">
+                                @if($post->user_id === \Auth::id())
                                 <form method="post" action="{{ route('best_comment/store') }}" class="form-inline">
                                     @csrf
                                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                                     <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
                                 </form>
+                                @endif
                             </div>
                         </div>
                         <hr>
