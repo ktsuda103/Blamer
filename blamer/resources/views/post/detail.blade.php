@@ -63,10 +63,12 @@
                     @else
                         @foreach($comments as $comment)    
                         <div class="row">
-                            @if($comment->comment_id === $best_comment->comment_id)
-                            <div class="col-12 star">
-                                <i class="fas fa-star"></i>ベストコメントに選ばれました！
-                            </div>
+                            @if(isset($best_comment))
+                                @if($comment->comment_id === $best_comment->comment_id)
+                                <div class="col-12 star">
+                                    <i class="fas fa-star"></i>ベストコメントに選ばれました！
+                                </div>
+                                @endif
                             @endif
                             <div class="col-md-4">
                                 投稿者：{{ $comment->name }}
