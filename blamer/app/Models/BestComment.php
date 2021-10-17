@@ -32,4 +32,14 @@ class BestComment extends Model
         $best_comment = BestComment::where('post_id',$post_id)->first();
         return $best_comment;
     }
+
+    /**
+     * ベストコメントデータを削除
+     * $param $best_comment_id
+     * 
+     */
+    public function delete_best_comment($best_comment_id)
+    {
+        BestComment::where('id',$best_comment_id)->delete();
+    }
 }
