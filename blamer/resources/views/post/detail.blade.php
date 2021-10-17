@@ -73,7 +73,7 @@
                             <div class="col-md-4">
                                 <form method="post" action="{{ route('best_comment/store') }}" class="form-inline">
                                     @csrf
-                                    <input type="hidden">
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
                                     <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
                                 </form>
                             </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GoodController;
+use App\Http\Controllers\BestCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,4 @@ Route::post('/comment/store', [CommentController::class, 'store'])->name('commen
 Route::post('/good/store', [GoodController::class, 'store'])->name('good/store');
 Route::post('/good/delete', [GoodController::class, 'delete'])->name('good/delete');
 
-Route::post('/best_comment/store', [GoodController::class, 'store'])->name('best_comment/store');
+Route::post('/best_comment/store', [BestCommentController::class, 'store'])->name('best_comment/store');
