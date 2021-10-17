@@ -21,7 +21,7 @@ class BestCommentController extends Controller
         $post_id = $request->input('post_id');
         $comment_id = $request->input('comment_id');
         DB::transaction(function()use($best_comment_model,$point_model,$user_id,$post_id,$comment_id){
-            $best_comment_model->insert_best_comment($post_id,$comment_id);
+            $best_comment_model->insert_best_comment($user_id,$post_id,$comment_id);
             $point_model->insert_point($user_id,100);
         });
         return redirect()->route('post/detail',['id'=>$post_id])->with('success','ベストコメントに設定しました。');

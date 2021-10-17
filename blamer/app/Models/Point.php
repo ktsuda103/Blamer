@@ -14,7 +14,7 @@ class Point extends Model
      * $param $user_id
      * return $point_data
      */
-    private function get_point($user_id)
+    public function get_point($user_id)
     {
         $point_data = Point::where('user_id',$user_id)->first();
         return $point_data;

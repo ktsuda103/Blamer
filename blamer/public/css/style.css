@@ -20,3 +20,12 @@
     color: #ff4500;
     margin-bottom: 10px;
 }
+
+.image{
+    object-fit: contain; 
+    height: 30vh;
+}
+
+.post-card{
+    margin-bottom: 20px;
+}

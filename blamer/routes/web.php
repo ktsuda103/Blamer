@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GoodController;
 use App\Http\Controllers\BestCommentController;
+use App\Http\Controllers\MypageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,5 @@ Route::post('/good/delete', [GoodController::class, 'delete'])->name('good/delet
 
 Route::post('/best_comment/store', [BestCommentController::class, 'store'])->name('best_comment/store');
 Route::post('/best_comment/delete', [BestCommentController::class, 'delete'])->name('best_comment/delete');
+
+Route::get('/mypage/index', [MypageController::class, 'index'])->name('mypage/index');

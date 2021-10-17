@@ -14,8 +14,9 @@ class BestComment extends Model
      * $param $user_id,$post_id
      * 
      */
-    public function insert_best_comment($post_id,$comment_id)
+    public function insert_best_comment($user_id,$post_id,$comment_id)
     {
+        $this->user_id = $user_id;
         $this->post_id = $post_id;
         $this->comment_id = $comment_id;
         $this->save();
@@ -30,6 +31,17 @@ class BestComment extends Model
     {
         $best_comment = BestComment::where('post_id',$post_id)->first();
         return $best_comment;
+    }
+
+    /**
+     * 自分のベストコメントデータを取得
+     * 
+     * 
+     */
+    public function get_my_best_comment($user_id)
+    {
+        $my_best_comment = BestComment::where('user_id',$user_id)->count();
+        return $my_best_comment;
     }
 
     /**

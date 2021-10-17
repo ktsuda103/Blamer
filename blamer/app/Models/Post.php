@@ -58,4 +58,15 @@ class Post extends Model
         $post = $this->get_item()->where('posts.id',$id)->first();
         return $post;
     }
+
+    /**
+     * 自分の投稿を取得
+     * 
+     * 
+     */
+    public function get_my_item($user_id)
+    {
+        $posts = $this->get_item()->where('user_id',$user_id)->orderBy('post_create','DESC')->get();
+        return $posts;
+    }
 }
