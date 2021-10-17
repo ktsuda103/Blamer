@@ -25,7 +25,7 @@
                         </div>
                         <div class="card-footer">
                             <p>投稿者：{{ $post->name }}</p>
-                            <p>投稿日時：{{ $post->post_create }}</p>
+                            <p>{{ $post->post_create }}</p>
                         </div>
                     </div>
                 </div>
