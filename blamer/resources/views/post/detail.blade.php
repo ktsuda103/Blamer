@@ -84,6 +84,7 @@
                                             @csrf
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
                                             <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">
+                                            <input type="hidden" name="user_id" value="{{ $comment->user_id }}">
                                             <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
                                         </form>
                                     @elseif($best_comment->comment_id === $comment->comment_id)
