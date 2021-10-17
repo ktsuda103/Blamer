@@ -10,14 +10,31 @@ class Point extends Model
     use HasFactory;
 
     /**
+     * ポイントデータを取得
+     * $param $user_id
+     * return $point_data
+     */
+    private function get_point($user_id)
+    {
+        $point_data = Point::where('user_id',$user_id)->first();
+        return $point_data;
+    }
+
+    /**
      * ポイントを加算
      * $param $user_id,$point
      * 
      */
     public function insert_point($user_id,$point)
     {
-        $this->user_id = $user_id;
-        $this->point = $point;
-        $this->save();
+        $point_data = $this->get_point($user_id);
+        if(isset($point_data)){
+            $point_data->point = $point_data->point + $point;
+            $point_data->save();
+        }else{
+            $this->user_id = $user_id;
+            $this->point = $point;
+            $this->save();
+        }
     }
 }
