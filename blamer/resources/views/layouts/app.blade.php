@@ -75,6 +75,15 @@
                                     </form>
                                 </div>
                             </li>
+                            <li id="navbarDropdown" class="nav-item dropdown">
+                                <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    その他
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="{{ route('user_policy') }}" class="dropdown-item">利用規約</a>
+                                    <a href="{{ route('privacy_policy') }}" class="dropdown-item">プライバシーポリシー</a>
+                                </div>
+                            </li>
                         @endguest
                     </ul>
                 </div>
