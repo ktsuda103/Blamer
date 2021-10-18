@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Post;
 use App\Models\Point;
 use App\Models\BestComment;
@@ -49,8 +50,10 @@ class MypageController extends Controller
 
     public function update(ProfileFormRequest $request)
     {
+        $user_id = \Auth::id();
         $name = $request->input('name');
         $email = $request->input('email');
-        dd($name);
+        User::where('id',$user_id)->update(['name'=>$name,'email'=>$email]);
+        return redirect()->route('mypage/index')->with('success','プロフィールを更新しました。');
     }
 }

@@ -4,7 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            
+        @if(session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
             <h1>{{$user['name']}}のページ</h1>
             <div class="text-center profile">     
                 <p>{{ $user->email }}</p>
