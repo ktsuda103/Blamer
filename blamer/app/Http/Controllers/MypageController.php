@@ -56,4 +56,12 @@ class MypageController extends Controller
         User::where('id',$user_id)->update(['name'=>$name,'email'=>$email]);
         return redirect()->route('mypage/index')->with('success','プロフィールを更新しました。');
     }
+
+    public function delete()
+    {
+        $user_id = \Auth::id();
+        $user_model = new User();
+        $user_model->delete_user($user_id);
+        return redirect()->route('login')->with('success','退会処理が完了しました。');
+    }
 }

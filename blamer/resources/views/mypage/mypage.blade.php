@@ -19,7 +19,7 @@
             </div>
             <p class="link"><a href="{{ route('mypage/good') }}"><i class="fas fa-heart icon"></i>いいね一覧</a></p>
             <p class="link"><a href="{{ route('mypage/edit') }}"><i class="fas fa-user-edit icon"></i>編集する</a></p>
-            <p class="link"><a href=""><i class="fas fa-door-closed icon"></i>退会する</a></p>
+            <p class="link"><a href="{{ route('mypage/delete') }}"><i class="fas fa-door-closed icon"></i>退会する</a></p>
         </div>
         <div class="col-md-8">
             <h2>投稿一覧</h2>
