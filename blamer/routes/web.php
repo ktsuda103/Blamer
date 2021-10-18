@@ -42,3 +42,4 @@ Route::get('/mypage/index', [MypageController::class, 'index'])->name('mypage/in
 Route::get('/mypage/good', [MypageController::class, 'good'])->name('mypage/good');
 Route::get('/mypage/edit', [MypageController::class, 'edit'])->name('mypage/edit');
 Route::post('/mypage/update', [MypageController::class, 'update'])->name('mypage/update');
+Route::post('/mypage/delete', [MypageController::class, 'delete'])->name('mypage/delete');
