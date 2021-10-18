@@ -40,3 +40,5 @@ Route::post('/best_comment/delete', [BestCommentController::class, 'delete'])->n
 
 Route::get('/mypage/index', [MypageController::class, 'index'])->name('mypage/index');
 Route::get('/mypage/good', [MypageController::class, 'good'])->name('mypage/good');
+Route::get('/mypage/edit', [MypageController::class, 'edit'])->name('mypage/edit');
+Route::post('/mypage/update', [MypageController::class, 'update'])->name('mypage/update');

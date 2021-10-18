@@ -46,3 +46,12 @@
     margin-bottom: 80px;
     font-size: 20px;
 }
+
+.input{
+    border: none;
+    border-bottom: solid 1px black;
+    font-size: 25px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    width: 430px;
+}

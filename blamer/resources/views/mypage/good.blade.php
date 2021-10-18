@@ -11,7 +11,7 @@
                 <p>ベストコメント数：{{ $best_comment }}件</p>
             </div>
             <p class="link"><a href="{{ route('mypage/index') }}"><i class="fas fa-user icon"></i>マイページ</a></p>
-            <p class="link"><a href=""><i class="fas fa-user-edit icon"></i>編集する</a></p>
+            <p class="link"><a href="{{ route('mypage/edit') }}"><i class="fas fa-user-edit icon"></i>編集する</a></p>
             <p class="link"><a href=""><i class="fas fa-door-closed icon"></i>退会する</a></p>
         </div>
         <div class="col-md-8">
