@@ -25,6 +25,8 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/user_policy', [HomeController::class, 'user_policy'])->name('user_policy');
+Route::get('/privacy_policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('/post/detail/{id}', [HomeController::class, 'detail'])->name('post/detail');
 
 Route::get('/post/create', [PostController::class, 'create'])->name('post/create');
