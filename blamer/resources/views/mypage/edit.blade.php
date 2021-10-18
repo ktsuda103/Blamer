@@ -8,7 +8,7 @@
                 <div class="card-header">プロフィールを編集する</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('mypage/update') }}">
                         @csrf
 
                         <div class="form-group row">

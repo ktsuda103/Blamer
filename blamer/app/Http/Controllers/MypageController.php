@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Point;
 use App\Models\BestComment;
 use App\Models\Good;
+use App\Http\Requests\ProfileFormRequest;
 
 
 class MypageController extends Controller
@@ -44,5 +45,12 @@ class MypageController extends Controller
     {
         $user = \Auth::user();
         return view('mypage/edit',compact('user'));
+    }
+
+    public function update(ProfileFormRequest $request)
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        dd($name);
     }
 }
