@@ -43,7 +43,18 @@
 }
 
 .profile{
+    padding-left: 0px;
     margin-bottom: 80px;
+    font-size: 20px;
+}
+
+.profile ul{
+    padding-left: 20px;
+}
+
+.profile-item{
+    margin-top: 20px;
+    margin-bottom: 20px; 
     font-size: 20px;
 }
 
@@ -54,4 +65,10 @@
     padding-left: 10px;
     margin-bottom: 30px;
     width: 430px;
+}
+
+.message{
+    margin-top: 20px;
+    font-size: 20px;
+    border-bottom: solid 1px black;
 }
