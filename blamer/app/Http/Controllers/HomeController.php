@@ -37,4 +37,14 @@ class HomeController extends Controller
         $best_comment = $best_comment_model->get_best_comment($id);
         return view('post/detail',compact('post','comments','good','best_comment'));
     }
+
+    public function user_policy()
+    {
+        return view('policy/user_policy');
+    }
+
+    public function privacy_policy()
+    {
+        return view('policy/privacy_policy');
+    }
 }
