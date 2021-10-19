@@ -81,7 +81,7 @@
                                 その他
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a href="" class="dropdown-item">お問い合わせ</a>
+                                <a href="{{ route('contact/index') }}" class="dropdown-item">お問い合わせ</a>
                                 <a href="{{ route('user_policy') }}" class="dropdown-item">利用規約</a>
                                 <a href="{{ route('privacy_policy') }}" class="dropdown-item">プライバシーポリシー</a>
                             </div>
