@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GoodController;
 use App\Http\Controllers\BestCommentController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,7 @@ Route::get('/mypage/good', [MypageController::class, 'good'])->name('mypage/good
 Route::get('/mypage/edit', [MypageController::class, 'edit'])->name('mypage/edit');
 Route::post('/mypage/update', [MypageController::class, 'update'])->name('mypage/update');
 Route::get('/mypage/delete', [MypageController::class, 'delete'])->name('mypage/delete');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact/index');
+Route::post('/contact/confirm', [ContactController::class, 'confirm'])->name('contact/confirm');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact/send');
