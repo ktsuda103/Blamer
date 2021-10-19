@@ -31,20 +31,10 @@
                                 <div class="col-md-9">
                                     {{ $contact['content'] }}
                                 </div>
-                            </div>
                         </div>
-
-                        <div class="form-group row">
-                            <div class="offset-1 col-3">
-                                <a href="{{ route('contact/index') }}" class="btn btn-info"><戻る</a> 
-                            </div>
-                           
-                            <div class="col-2 offset-6">
-                                <button type="submit" class="btn btn-primary">
-                                    送信>
-                                </button>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn btn-primary ml-5 mb-3">送信する</button>
+                        <a href="{{ route('contact/index') }}" class="d-block ml-5">前のページへ戻る</a>     
+                        
                     </form>
                 </div>
             </div>

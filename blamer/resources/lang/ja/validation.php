@@ -153,7 +153,8 @@ return [
         'title' => 'タイトル',
         'image' => '画像',
         'comment' => '投稿内容',
-        'content' => 'お問い合わせ内容'
+        'content' => 'お問い合わせ内容',
+        'category' => 'カテゴリー'
     ],
 
 ];

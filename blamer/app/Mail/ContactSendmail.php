@@ -20,7 +20,7 @@ class ContactSendmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contact)
     {
         $this->email = $contact['email'];
         $this->category = $contact['category'];
@@ -42,6 +42,6 @@ class ContactSendmail extends Mailable
             'email' => $this->email,
             'category' => $this->category,
             'contact' => $this->content,
-        ])
+        ]);
     }
 }
