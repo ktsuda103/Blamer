@@ -6,6 +6,15 @@
 
 .sentense{
     font-family: 'New Tegomin', serif;
+    font-size: 17px;
+}
+
+.heading{
+    margin-bottom: 30px;
+}
+
+.post-image{
+    border: none;
 }
 
 .comment{
