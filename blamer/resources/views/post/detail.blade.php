@@ -21,6 +21,7 @@
             <div class="card mb-5">
                 <div class="card-header">
                     {{ $post->title }}
+                    <hr color="white">
                     <div class="text-right">
                         <p>投稿者：{{ $post->name }}</p>
                         <p>投稿日時：{{ $post->post_create }}</p>
@@ -50,7 +51,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p class="large">投稿内容</p>
+                    <p class="large">投稿内容</p><hr color="white">   
                     {{ $post->comment }}
                 </div>
             </div>
