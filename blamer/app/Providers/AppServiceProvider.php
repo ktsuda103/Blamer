@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $user = \Auth::user();
             $point_model = new Point();
             $point = $point_model->get_point($user['id']);
-            $view->with('user',$user);
+            $view->with('user',$user)->with('point',$point);
         });
     }
 }
