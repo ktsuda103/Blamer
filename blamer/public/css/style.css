@@ -33,6 +33,11 @@
     font-size: 20px;
 }
 
+.rank{
+    color: royalblue;
+    font-family: 'Dela Gothic One', cursive;
+}
+
 .black-heart{
     border: none;
     color: black;

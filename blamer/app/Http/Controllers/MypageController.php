@@ -37,9 +37,8 @@ class MypageController extends Controller
         $point_model = new Point();
         $best_comment_model = new BestComment();
         $goods = $good_model->get_my_post_good($user['id']);
-        $point = $point_model->get_point($user['id']);
         $best_comment = $best_comment_model->get_my_best_comment($user['id']);
-        return view('mypage/good',compact('goods','user','point','best_comment'));
+        return view('mypage/good',compact('goods','user','best_comment'));
     }
 
     public function edit()
