@@ -38,6 +38,7 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="col-8 offset-4">{{ $goods->links() }}</div>
                 @endif
             </div>
         </div>

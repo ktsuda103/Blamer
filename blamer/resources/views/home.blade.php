@@ -33,6 +33,7 @@
             </div>
         </div>
         @endforeach
+        <div class="col-7 offset-5">{{ $posts->links() }}</div>
     </div>
 </div>
 @endsection

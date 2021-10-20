@@ -43,6 +43,7 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="col-8 offset-4">{{ $posts->links() }}</div>
                 @endif
             </div>
         </div>

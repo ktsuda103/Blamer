@@ -44,7 +44,7 @@ class Post extends Model
      */
     public function get_all_item()
     {
-        $posts = $this->get_item()->paginate(12);
+        $posts = $this->get_item()->paginate(9);
         return $posts;
     }
 
@@ -66,7 +66,7 @@ class Post extends Model
      */
     public function get_my_item($user_id)
     {
-        $posts = $this->get_item()->where('user_id',$user_id)->orderBy('post_create','DESC')->get();
+        $posts = $this->get_item()->where('user_id',$user_id)->orderBy('post_create','DESC')->paginate(6);
         return $posts;
     }
 }
