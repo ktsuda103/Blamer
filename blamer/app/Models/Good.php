@@ -55,7 +55,7 @@ class Good extends Model
         ->join('users','posts.user_id','=','users.id')
         ->select('title','image','posts.created_at as created_at','name','posts.id as post_id')
         ->where('goods.user_id',$user_id)
-        ->get();
+        ->paginate(6);
         return $goods;
     }
 

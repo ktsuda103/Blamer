@@ -1,13 +1,48 @@
+.app-name{
+    font-family: 'Creepster', cursive;
+    font-size: 60px;
+    color: navy;
+}
+
+.sentense{
+    font-family: 'New Tegomin', serif;
+    font-size: 17px;
+}
+
+.heading{
+    margin-bottom: 30px;
+}
+
+.post-image{
+    border: none;
+}
+
 .comment{
     white-space: pre-wrap;
     font-size: 15px;
     margin-top: 10px;
 }
 
+.pagination{
+    text-align: center;
+}
+
 .heart{
     border: none;
     color: red;
     font-size: 20px;
+}
+
+.nav-rank{
+    color: blue;
+    font-weight: 900;
+    margin-right: 20px;
+}
+
+.rank{
+    color: royalblue;
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 21px;
 }
 
 .black-heart{
@@ -40,6 +75,7 @@
     font-size: 20px; 
     border-bottom: solid 1px black;
     padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .profile{

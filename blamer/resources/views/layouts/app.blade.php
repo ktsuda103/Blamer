@@ -16,6 +16,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,7 +32,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand app-name" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -55,6 +61,27 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item nav-rank">
+                                <div class="nav-link"><i class="fas fa-crown mr-2"></i>現在のランク：
+                                    <div class="d-inline">
+                                        @if($point['point'] >= 30000)
+                                            神
+                                        @elseif($point['point'] >= 10000)
+                                            King of Blamer
+                                        @elseif($point['point'] >= 5000)
+                                            上級Blamer
+                                        @elseif($point['point'] >= 2000)
+                                            中級Blamer
+                                        @elseif($point['point'] >= 500)
+                                            初級Blamer
+                                        @elseif($point['point'] > 0)
+                                            駆け出しBlamer
+                                        @else
+                                            入門
+                                        @endif
+                                    </div>
+                                </div>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('post/create') }}"><i class="fas fa-plus mr-2"></i>投稿する</a>
                             </li>
