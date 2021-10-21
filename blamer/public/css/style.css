@@ -91,3 +91,16 @@
 .section{
     margin-bottom: 40px;
 }
+
+.alert-box{
+    margin-top: 30px;
+}
+
+.alert-box li{
+    margin-bottom: 10px;
+}
+
+.alert{
+    color: red;
+    font-weight: bold;
+}
