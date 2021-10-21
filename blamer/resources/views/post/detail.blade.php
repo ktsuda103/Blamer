@@ -88,13 +88,6 @@
                                             <input type="hidden" name="user_id" value="{{ $comment->user_id }}">
                                             <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
                                         </form>
-                                    @elseif($best_comment->comment_id === $comment->comment_id)
-                                    <form method="post" action="{{ route('best_comment/delete') }}" class="form-inline">
-                                        @csrf
-                                        <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                        <input type="hidden" name="best_comment_id" value="{{ $best_comment->id }}">
-                                        <button type="submit" class="btn btn-secondary">ベストコメントを解除</button>
-                                    </form>
                                     @endif
                                 @endif
                             </div>
