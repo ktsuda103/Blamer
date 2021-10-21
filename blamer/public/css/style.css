@@ -77,3 +77,17 @@
     margin-bottom: 40px;
     margin-top: 20px;
 }
+
+.overview{
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.overview h3{
+    margin-bottom: 40px;
+    font-weight: 90;
+}
+
+.section{
+    margin-bottom: 40px;
+}
