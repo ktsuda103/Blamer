@@ -30,6 +30,7 @@
                         </a>
                     </li>
                     <li class="profile-item">現在のポイント数：{{ number_format($point['point']) }}ポイント</li>
+                    <p class="small">→ポイントについては<a href="{{ route('rank') }}">こちら</a></p>
                     <li class="profile-item">ベストコメント数：{{ $best_comment }}件</li>
                 </ul> 
             </div>
