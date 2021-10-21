@@ -14,25 +14,23 @@
             <p>{{ $user->email }}</p>  
                 <ul>
                     <li class="profile-item">現在のランク：
-                        <a href="">
-                            <div class="d-inline rank">
-                                @if($point['point'] >= 30000)
-                                    神
-                                @elseif($point['point'] >= 10000)
-                                    King of Blamer
-                                @elseif($point['point'] >= 5000)
-                                    上級Blamer
-                                @elseif($point['point'] >= 2000)
-                                    中級Blamer
-                                @elseif($point['point'] >= 500)
-                                    初級Blamer
-                                @elseif($point['point'] > 0)
-                                    駆け出しBlamer
-                                @else
-                                    入門
-                                @endif
-                            </div>
-                        </a>
+                        <div class="d-inline rank">
+                            @if($point['point'] >= 30000)
+                                神
+                            @elseif($point['point'] >= 10000)
+                                King of Blamer
+                            @elseif($point['point'] >= 5000)
+                                上級Blamer
+                            @elseif($point['point'] >= 2000)
+                                中級Blamer
+                            @elseif($point['point'] >= 500)
+                                初級Blamer
+                            @elseif($point['point'] > 0)
+                                駆け出しBlamer
+                            @else
+                                入門
+                            @endif
+                        </div>
                     </li>
                     <li class="profile-item">現在のポイント数：{{ number_format($point['point']) }}ポイント</li>
                     <p class="small">→ポイントについては<a href="{{ route('rank') }}">こちら</a></p>
