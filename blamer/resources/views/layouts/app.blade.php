@@ -62,25 +62,27 @@
                             @endif
                         @else
                             <li class="nav-item nav-rank">
-                                <div class="nav-link"><i class="fas fa-crown mr-2"></i>現在のランク：
-                                    <div class="d-inline">
-                                        @if($point['point'] >= 30000)
-                                            神
-                                        @elseif($point['point'] >= 10000)
-                                            King of Blamer
-                                        @elseif($point['point'] >= 5000)
-                                            上級Blamer
-                                        @elseif($point['point'] >= 2000)
-                                            中級Blamer
-                                        @elseif($point['point'] >= 500)
-                                            初級Blamer
-                                        @elseif($point['point'] > 0)
-                                            駆け出しBlamer
-                                        @else
-                                            入門
-                                        @endif
+                                <a href="{{ route('rank') }}">
+                                    <div class="nav-link"><i class="fas fa-crown mr-2"></i>現在のランク：
+                                        <div class="d-inline">
+                                            @if($point['point'] >= 30000)
+                                                神
+                                            @elseif($point['point'] >= 10000)
+                                                King of Blamer
+                                            @elseif($point['point'] >= 5000)
+                                                上級Blamer
+                                            @elseif($point['point'] >= 2000)
+                                                中級Blamer
+                                            @elseif($point['point'] >= 500)
+                                                初級Blamer
+                                            @elseif($point['point'] > 0)
+                                                駆け出しBlamer
+                                            @else
+                                                入門
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('post/create') }}"><i class="fas fa-plus mr-2"></i>投稿する</a>

@@ -47,4 +47,9 @@ class HomeController extends Controller
     {
         return view('policy/privacy_policy');
     }
+
+    public function rank()
+    {
+        return view('rank');
+    }
 }
