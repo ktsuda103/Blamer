@@ -78,10 +78,10 @@
                         </div>    
                         <div class="col-md-8 col-6 section">
                             <h3>投稿へコメントしよう！</h3>
-                            <p>無駄な買い物をしてしまう投稿にはみんなで非難してあげましょう！</p>
+                            <p>無駄な買い物をしてしまう投稿にはみんなで罵倒しましょう！</p>
                             <p>なんでそんな物買ったんだ！</p>
                             <p>おいこのデブ！</p>
-                            <p>あきれて何も言えません。etc.</p>
+                            <p>呆れました。etc.</p>
                         </div>        
                         <div class="col-md-3 col-6 section">
                             <img src="{{ Storage::url('public/images/angry_man_02_mono.png') }}" alt="" class="img-fluid">

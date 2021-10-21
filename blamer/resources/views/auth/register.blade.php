@@ -72,6 +72,18 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-8">
+            <div class="card alert-box">
+                <div class="card-body">
+                    <h5 class="alert">！注意</h5>
+                    <ul>
+                        <li>本アプリはお互いを罵倒し合うアプリです。</li>
+                        <li>メンタルの弱い方はご使用をお控えください。</li>
+                        <li>本アプリにより気分を害された場合でも、一切の責任は負いません。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
