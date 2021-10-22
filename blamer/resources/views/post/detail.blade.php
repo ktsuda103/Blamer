@@ -81,12 +81,14 @@
                             <div class="col-md-4">
                                 @if($post->user_id === \Auth::id() && $comment->user_id !== \Auth::id())
                                     @if($best_comment === null)
-                                        <form method="post" action="{{ route('best_comment/store') }}" class="form-inline">
+                                        <form method="post" action="{{ route('best_comment/store') }}" class="form-inline" id="best-comment">
                                             @csrf
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
                                             <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">
                                             <input type="hidden" name="user_id" value="{{ $comment->user_id }}">
-                                            <button type="submit" class="btn btn-info">ベストコメントに選ぶ</button>
+                                            <button class="btn btn-info">
+                                                <div onclick="bestCommentHandle(event);"><i class="fas fa-thumbs-up mr-2"></i>ベストコメントに選ぶ</div>
+                                            </button>
                                         </form>
                                     @endif
                                 @endif

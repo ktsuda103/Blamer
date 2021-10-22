@@ -5,3 +5,12 @@ scrollTopButton.addEventListener('click',()=>{
     behavior:"smooth"
   });
 });
+
+function bestCommentHandle(event){
+  event.preventDefault();
+  if(window.confirm('ベストコメントに選びますか？ベストコメントには一度しか選べません。')){
+    document.getElementById('best-comment').submit();
+  } else {
+    alert('キャンセルしました。');
+  }
+}
