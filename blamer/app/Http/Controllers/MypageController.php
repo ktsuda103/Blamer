@@ -56,9 +56,9 @@ class MypageController extends Controller
         return redirect()->route('mypage/index')->with('success','プロフィールを更新しました。');
     }
 
-    public function delete()
+    public function delete(Request $request)
     {
-        $user_id = \Auth::id();
+        $user_id = $request->input('user_id');
         $user_model = new User();
         $user_model->delete_user($user_id);
         return redirect()->route('login')->with('success','退会処理が完了しました。');
