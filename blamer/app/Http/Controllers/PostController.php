@@ -40,7 +40,7 @@ class PostController extends Controller
         $path = $request->file('image')->storeAs('public/images', $file);
         DB::transaction(function()use($post_model,$point_model,$user_id,$data,$path){
             $post_model->insert_item($user_id,$data,$path);
-            $point_model->insert_point($user_id,50);
+            $point_model->insert_point($user_id,100);
         });
         
         return redirect()->route('post/create')->with('success', '投稿完了しました。');

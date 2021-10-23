@@ -29,7 +29,7 @@ class CommentController extends Controller
         $point_model = new Point();
         DB::transaction(function()use($comment,$post_id,$user_id,$comment_model,$point_model){
             $comment_model->insert_comment($comment,$post_id,$user_id);
-            $point_model->insert_point($user_id,30);
+            $point_model->insert_point($user_id,50);
         });
         return redirect()->route('post/detail',['id'=>$post_id])->with('success','コメントしました。');
 
