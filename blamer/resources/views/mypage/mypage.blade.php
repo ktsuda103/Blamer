@@ -39,7 +39,28 @@
             </div>
             <p class="link"><a href="{{ route('mypage/good') }}"><i class="fas fa-heart icon"></i>いいね一覧</a></p>
             <p class="link"><a href="{{ route('mypage/edit') }}"><i class="fas fa-user-edit icon"></i>編集する</a></p>
-            <p class="link"><a href="{{ route('mypage/delete') }}"><i class="fas fa-door-closed icon"></i>退会する</a></p>
+            <p class="link"><a data-toggle="modal" data-target="#delete-modal"><i class="fas fa-door-closed icon"></i>退会する</a></p>
+            <div class="modal" id="delete-modal" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>退会確認画面</h4>
+                        </div>
+                        <div class="modal-body">
+                            <label>退会しますか？</label>
+                            <p class="caution">※退会するとこれまでの投稿・コメントは削除されます。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                            <form action="{{ route('mypage/delete') }}" method="post">
+                                @csrf
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                <button type="submit" class="btn btn-secondary">退会する</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-8">
             <h2>投稿一覧</h2>

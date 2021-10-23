@@ -10,8 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/blamer.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -96,14 +96,7 @@
                                     <a class="dropdown-item" href="{{ route('mypage/index') }}">
                                         マイページ
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('ログアウト') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#logout" href="{{ route('logout') }}">ログアウト</a>   
                                 </div>
                             </li>
                         @endguest
@@ -123,6 +116,25 @@
         </nav>
 
         <main class="py-4">
+            <div class="modal" id="logout" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>ログアウト</h4>
+                        </div>
+                        <div class="modal-body">
+                            <label>ログアウトしますか？</label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-secondary">ログアウトする</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @yield('content')
         </main>
     </div>
