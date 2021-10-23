@@ -86,8 +86,8 @@
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
                                             <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">
                                             <input type="hidden" name="user_id" value="{{ $comment->user_id }}">
-                                            <button class="btn btn-info">
-                                                <div onclick="bestCommentHandle(event);"><i class="fas fa-thumbs-up mr-2"></i>ベストコメントに選ぶ</div>
+                                            <button class="btn btn-info p-0">
+                                                <div onclick="bestCommentHandle(event);" class="p-2"><i class="fas fa-thumbs-up mr-2"></i>ベストコメントに選ぶ</div>
                                             </button>
                                         </form>
                                     @endif
