@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p class="large">投稿内容</p><hr color="white">   
-                    {{ $post->comment }}
+                    <p class="large">投稿内容</p><hr>  
+                    <div class="comment">{{ $post->comment }}</div>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-md-8 comment">{{ $comment->comment }}</div>
                             <div class="col-md-4">
-                                @if($post->user_id === \Auth::id() && $comment->user_id !== \Auth::id())
+                                @if($post->user_id === $user->id && $comment->user_id !== $user->id)
                                     @if($best_comment === null)
                                         <form method="post" action="{{ route('best_comment/store') }}" class="form-inline">
                                             @csrf

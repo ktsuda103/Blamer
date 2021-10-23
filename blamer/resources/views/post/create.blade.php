@@ -47,7 +47,7 @@
                         <div class="form-group row">
                             <label for="comment" class="col-md-3 col-form-label text-md-right">ひとこと</label>
                             <div class="col-md-7">
-                                <textarea rows="10" cols="50" name="comment" id="comment" class="form-control" value="{{ old('comment') }}"></textarea>
+                                <textarea rows="10" cols="50" name="comment" id="comment" class="form-control">{{ old('comment') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group row">
