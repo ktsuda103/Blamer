@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function delete_user($user_id)
+    {
+        User::where('id',$user_id)->delete();
+    }
 }

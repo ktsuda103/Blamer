@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+use App\Models\Point;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+
+        Paginator::useBootstrap();
+
+        view()->composer('*', function($view){
+            $user = \Auth::user();
+            $point_model = new Point();
+            $point = $point_model->get_point($user['id']);
+            $view->with('user',$user)->with('point',$point);
+        });
     }
 }
