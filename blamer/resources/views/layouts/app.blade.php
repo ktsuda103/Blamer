@@ -96,16 +96,30 @@
                                     <a class="dropdown-item" href="{{ route('mypage/index') }}">
                                         マイページ
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('ログアウト') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#logout" href="{{ route('logout') }}">ログアウト</a>
+                                    <div class="modal" id="logout" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4>ログアウト</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>ログアウトしますか？</label>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                                                    <form action="{{ route('logout') }}" method="POST">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-secondary">ログアウトする</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </li>
+                            
                         @endguest
                         <li id="navbarDropdown" class="nav-item dropdown">
                             <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

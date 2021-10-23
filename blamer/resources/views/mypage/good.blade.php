@@ -43,6 +43,7 @@
                         </div>
                         <div class="modal-body">
                             <label>退会しますか？</label>
+                            <p class="caution">※退会するとこれまでの投稿・コメントは削除されます。</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
