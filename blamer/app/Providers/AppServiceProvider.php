@@ -32,8 +32,14 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function($view){
             $user = \Auth::user();
+            if(empty($user)){
+                $user = ['id'=>0];
+            }
             $point_model = new Point();
             $point = $point_model->get_point($user['id']);
+            if(empty($point)){
+                $point = ['point'=>0];
+            }
             $view->with('user',$user)->with('point',$point);
         });
     }

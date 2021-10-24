@@ -66,10 +66,10 @@
                             <p>ネットショッピングで衝動買いをしてしまう・・・。</p>
                         </div>
                         <div class="col-md-3 col-6 section">
-                            <img src="{{ Storage::url('public/images/trouble_man_mono-1.png') }}" alt="" class="img-fluid">
+                            <img src="{{ Storage::disk('s3')->url('test/trouble_man_mono-1.png') }}" class="img-fluid">
                         </div>            
                         <div class="col-md-3 col-6 section">
-                            <img src="{{ Storage::url('public/images/smartphone_woman_mono.png') }}" alt="" class="img-fluid">                      
+                            <img src="{{ Storage::disk('s3')->url('test/smartphone_man_mono-1.png') }}" class="img-fluid">      
                         </div>        
                         <div class="offset-md-2 col-md-7 col-5 section">
                             <h3>そんな時はBlamer！</h3>
@@ -84,10 +84,10 @@
                             <p>呆れました。etc.</p>
                         </div>        
                         <div class="col-md-3 col-6 section">
-                            <img src="{{ Storage::url('public/images/angry_man_02_mono.png') }}" alt="" class="img-fluid">
+                            <img src="{{ Storage::disk('s3')->url('test/angry_man_02_mono.png') }}" class="img-fluid">
                         </div>
                         <div class="col-md-3 col-6 section">
-                            <img src="{{ Storage::url('public/images/medalist_woman_mono.png') }}" alt="" class="img-fluid">                      
+                            <img src="{{ Storage::disk('s3')->url('test/medalist_woman_mono.png') }}" class="img-fluid">                  
                         </div>
                         <div class="offset-md-2 col-md-7 col-6 section">
                             <h3>ランクをあげよう！</h3>

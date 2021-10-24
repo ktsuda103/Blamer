@@ -7,6 +7,7 @@ use App\Http\Requests\PostFormRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use App\Models\Point;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -36,8 +37,8 @@ class PostController extends Controller
         $point_model = new Point();
         $user_id = \Auth::id();
         $data = $request->input();
-        $file = $request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->storeAs('public/images', $file);
+        $file = $request->file('image');
+        $path = Storage::disk('s3')->putFile('/test',$file,'public');
         DB::transaction(function()use($post_model,$point_model,$user_id,$data,$path){
             $post_model->insert_item($user_id,$data,$path);
             $point_model->insert_point($user_id,100);

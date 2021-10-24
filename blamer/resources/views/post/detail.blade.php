@@ -47,7 +47,7 @@
                 </div>
                 <div class="text-center">
                     <div class="card-body">
-                        <img src="{{ Storage::url($post->image) }}" alt="" class="img-fluid">
+                        <img src="{{ Storage::disk('s3')->url("$post->image") }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="card-footer">

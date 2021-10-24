@@ -74,7 +74,7 @@
                         <div class="card-header"><a href="{{ route('post/detail',['id' => $post->id]) }}">{{ $post->title }}</a></div>
                         <div class="text-center">
                             <div class="card-body">
-                                <a href="{{ route('post/detail',['id' => $post->id]) }}"><img src="{{ Storage::url($post->image) }}" alt="" class="img-fluid image"></a>
+                                <a href="{{ route('post/detail',['id' => $post->id]) }}"><img src="{{ Storage::disk('s3')->url("$post->image") }}" alt="" class="img-fluid image"></a>
                             </div>
                         </div>
                         <div class="card-footer">
