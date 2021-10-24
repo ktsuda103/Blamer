@@ -41,7 +41,3 @@ class GoodController extends Controller
         return redirect()->route('post/detail',['id'=>$post_id])->with('success','いいねを解除しました。');
     }
 }
-
-return redirect()->route('post/detail',['id'=>$post_id])->with('success','いいねを解除しました。');
-
-return redirect()->route('post/detail',['id'=>$post_id])->with('success','いいねを解除しました。');

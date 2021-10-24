@@ -14,7 +14,11 @@
                             <label for="email" class="col-md-3 col-form-label text-md-right">メールアドレス</label>
 
                             <div class="col-md-9">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user['email'] }}" autofocus>
+                                @auth
+                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user['email'] }}" autofocus>
+                                @else
+                                    <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email"  autofocus>
+                                @endif
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
