@@ -79,6 +79,7 @@
                             </div>
                             <div class="col-md-8 comment">{{ $comment->comment }}</div>
                             <div class="col-md-4">
+                            @auth
                                 @if($post->user_id === $user->id && $comment->user_id !== $user->id)
                                     @if($best_comment === null)
                                         <form method="post" action="{{ route('best_comment/store') }}" class="form-inline" id="best-comment">
@@ -92,6 +93,7 @@
                                         </form>
                                     @endif
                                 @endif
+                            @endauth
                             </div>
                         </div>
                         <hr>
