@@ -10,12 +10,6 @@ Blamerは意志の弱いあなたを寄ってたかって非難してサポー�
 ## アプリURL
 https://blamer.herokuapp.com/
 
-## アプリ概要
-どんなアプリ？
-<img width="1103" alt="スクリーンショット 2021-10-24 10 01 45" src="https://user-images.githubusercontent.com/86056191/138575928-a7aae936-a928-4f3d-9f99-f0698f47d740.png">
-
-<img width="1104" alt="スクリーンショット 2021-10-24 10 02 22" src="https://user-images.githubusercontent.com/86056191/138575938-473e57b1-f4b8-4a48-ad36-4014a128054e.png">
-
 ## 使用技術
 **バックエンド**<br>
 ・PHP 7.3<br>
@@ -32,7 +26,7 @@ https://blamer.herokuapp.com/
 
 **インフラ**<br>
 ・Docker(開発環境)<br>
-・Heroku<br>
+・Heroku(本番環境)<br>
 ・Amazon S3(画像アップロード)<br>
 
 **バージョン管理**<br>
@@ -40,7 +34,15 @@ https://blamer.herokuapp.com/
 ・GitHub<br>
 
 ## ER図
-![Untitled Diagram](https://user-images.githubusercontent.com/86056191/138594775-0156bfbf-6e67-4ad1-91ee-fe1ad4223d86.jpg)
+![ダウンロード](https://user-images.githubusercontent.com/86056191/139066675-aa5ab00c-a586-4063-aa32-7b3bf460a4c4.png)
+
+
+## アプリ概要
+どんなアプリ？
+<img width="1103" alt="スクリーンショット 2021-10-24 10 01 45" src="https://user-images.githubusercontent.com/86056191/138575928-a7aae936-a928-4f3d-9f99-f0698f47d740.png">
+
+<img width="1104" alt="スクリーンショット 2021-10-24 10 02 22" src="https://user-images.githubusercontent.com/86056191/138575938-473e57b1-f4b8-4a48-ad36-4014a128054e.png">
+
 
 ## 機能一覧
 共通<br>
