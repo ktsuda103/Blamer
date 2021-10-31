@@ -1,10 +1,11 @@
 const scrollTopButton = document.querySelector('#start-button');
-scrollTopButton.addEventListener('click',()=>{
+scrollTopButton.addEventListener('click',() => {
   window.scrollTo({
-    top:0,
-    behavior:"smooth"
+    top: 0,
+    behavior: "smooth"
   });
 });
+
 
 function bestCommentHandle(event){
   event.preventDefault();
